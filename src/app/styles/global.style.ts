@@ -1,10 +1,38 @@
+import { createGlobalStyle } from "styled-components";
+import { reset } from "styled-reset";
+
+export const GlobalStyle = createGlobalStyle`
+  ${reset}
+
+/*여기서부터는 팀룰에 따라 자유롭게 커스텀 
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body { 
+    width: 100%;
+    height: 100%;
+    min-width: 1200px;
+    background-color: #ffffff;
+    font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI;
+    font-size : 16px;
+    color: rgb(58, 58, 58);
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+*/
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
+/* 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -37,10 +65,10 @@
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+  --card-border-rgb: 131, 134, 135; */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -71,7 +99,7 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -81,18 +109,16 @@
 
 html,
 body {
+  /* width: 100vw; */
   max-width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
+  font-size: 10px;
+  padding: 22px 20px 0 20px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
 }
 
 a {
@@ -105,3 +131,6 @@ a {
     color-scheme: dark;
   }
 }
+
+
+`;
