@@ -1,18 +1,16 @@
 "use client";
 
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import { GlobalStyle } from "./styles/global.style";
 import StyledComponentsRegistry from "./lib/registry";
 
-const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata: Metadata = {
-//   title: "PORTFOLIO.OUR",
-//   description: "portfolio share web site",
-// };
+const noto = Noto_Sans_KR({
+  weight: "500",
+  subsets: ["latin"],
+  variable: "--font-noto",
+});
 
 export default function RootLayout({
   children,
@@ -20,18 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <head>
-        <meta name="PORTFOLIO.OUR" content="PORTFOLIO.SHARE.WEB" />
-      </head>
-      <body>
-        <ThemeProvider theme={theme}>
-          <StyledComponentsRegistry>
+    <StyledComponentsRegistry>
+      <ThemeProvider theme={theme}>
+        <html lang="ko" className={`${noto.variable}`}>
+          <head>
+            <meta name="PORTFOLIO.OUR" content="PORTFOLIO.SHARE.WEB" />
+            <title> PORTFOLIO.OUR </title>
             <GlobalStyle />
-            {children}
-          </StyledComponentsRegistry>
-        </ThemeProvider>
-      </body>
-    </html>
+          </head>
+          <body>{children}</body>
+        </html>
+      </ThemeProvider>
+    </StyledComponentsRegistry>
   );
 }

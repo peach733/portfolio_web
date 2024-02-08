@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <S.HeaderLayout>
       <S.HeaderTitleBox>
-        <S.HeaderTitle> It'S OUR </S.HeaderTitle>
+        <S.HeaderTitle> It's OUR </S.HeaderTitle>
         <S.HeaderTitle> PORTFOLIO. </S.HeaderTitle>
       </S.HeaderTitleBox>
       <S.HeaderMenuText> Front-End </S.HeaderMenuText>

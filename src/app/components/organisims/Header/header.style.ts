@@ -4,8 +4,10 @@ export const HeaderLayout = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 20px 0 20px;
+  margin-top: 22px;
 `;
 
 export const HeaderTitleBox = styled.div`
@@ -17,8 +19,8 @@ export const HeaderTitleBox = styled.div`
 `;
 
 export const HeaderTitle = styled.p`
-  font-size: 5rem;
-  font-weight: 600;
+  font-size: 4rem;
+  font-weight: 700;
   color: ${(props) => props.theme.colors.point};
 `;
 

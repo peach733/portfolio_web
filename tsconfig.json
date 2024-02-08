@@ -20,7 +20,8 @@
     "baseUrl": "",
     "paths": {
       "@/*": ["./src/*"],
-      "@styles/*": ["./src/app/styles/*"],
+      "@styles/images/*": ["./src/app/styles/assets/images/*"],
+      "@styles/icons/*": ["./src/app/styles/assets/icons/*"],
       "@templates/*": ["./src/app/components/templates/*"],
       "@organisims/*": ["./src/app/components/organisims/*"]
     }

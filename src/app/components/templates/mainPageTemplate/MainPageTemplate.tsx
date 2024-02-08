@@ -7,7 +7,7 @@ import NewPortFolioCard from "@organisims/newPortFolioCard/NewPortFolioCard";
 const MainPageTemplate = () => {
   return (
     <S.MainPageLayout>
-      <NewPortFolioCard />
+      <NewPortFolioCard title="FRONT-END" />
     </S.MainPageLayout>
   );
 };

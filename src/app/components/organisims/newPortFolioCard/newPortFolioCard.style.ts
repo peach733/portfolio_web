@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import CardBg from "@styles/assets/images/cardBackground.jpg";
+import CardBg from "../../../styles/assets/images/cardBackground.jpg";
 
 export const NewPortFolioCardLayout = styled.div`
   width: 100%;
-  height: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -25,41 +25,29 @@ export const NewPortFolioCardBody = styled.div`
   flex-direction: row;
   justify-content: space-between; */
   display: grid;
-  grid-template-areas: "content-view all-view";
-  grid-template-columns: 4fr 1fr;
-  grid-template-rows: 100%;
+  grid-template-areas: "content-view content-view all-view";
+  grid-template-columns: 2fr 2fr 1fr;
   gap: 20px;
 `;
 
 export const NewPortFolioCardContentLayout = styled.div`
   grid-area: content-view;
-  max-width: fit-content;
-  height: 100%;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
-  gap: 20px;
-
-  .slick-slider {
-    height: 100%;
-    .slick-list {
-      height: 100%;
-    }
-  }
+  white-space: nowrap;
+  overflow-x: scroll;
 `;
 
 export const NewPortFolioCardContentBody = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   gap: 20px;
+  margin-bottom: 1px;
 `;
 
 export const NewPortFolioCardContent = styled.div`
+  width: 450px;
   display: flex;
-  width: 400px;
-  height: 450px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

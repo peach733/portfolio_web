@@ -1,23 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { MouseEvent, useRef, useState } from "react";
 import * as S from "./newPortFolioCard.style";
-import Slider from "react-slick";
 import { NewPortFolioCardProps } from "@/app/types/NewPortFolioCardTypes";
 
 const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    variableWidth: true,
-    swipeToSlide: true,
-    draggable: true,
-    centerSlides: false,
-    spaceBetween: 20,
-  };
+  const scrollRef: any = useRef<HTMLDivElement>(null);
+
+  const [dragging, setDragging] = useState(false);
+  const [clickPoint, setClickPoint] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   const test = [
     { id: 0, content: "야호" },
@@ -39,22 +31,46 @@ const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
     { id: 0, content: "야호" },
     { id: 0, content: "야호" },
   ];
+
+  const handleMouseDownEvent = (e: MouseEvent<HTMLDivElement>) => {
+    setDragging(true);
+    if (scrollRef.current) {
+      setClickPoint(e.pageX);
+      setScrollLeft(scrollRef.current?.scrollLeft);
+    }
+  };
+
+  const handleMouseMoveEvent = (e: MouseEvent<HTMLDivElement>) => {
+    if (!dragging) return;
+
+    e.preventDefault();
+
+    if (scrollRef.current) {
+      const walk = e.pageX - clickPoint;
+
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
   return (
     <S.NewPortFolioCardLayout>
       <S.NewPortFolioCardTitle>NEW {title} PORTFOLIO</S.NewPortFolioCardTitle>
       <S.NewPortFolioCardBody>
-        <S.NewPortFolioCardContentLayout>
-          <Slider {...settings}>
+        <S.NewPortFolioCardContentLayout ref={scrollRef}>
+          <S.NewPortFolioCardContentBody
+            onMouseDown={handleMouseDownEvent}
+            onMouseLeave={() => setDragging(false)}
+            onMouseUp={() => setDragging(false)}
+            onMouseMove={handleMouseMoveEvent}
+          >
             {test.map((data: any, idx: number) => {
               return (
-                // <S.NewPortFolioCardBody key={idx}>
-                <S.NewPortFolioCardContent>
+                <S.NewPortFolioCardContent key={idx}>
                   {data.content}
                 </S.NewPortFolioCardContent>
-                // </S.NewPortFolioCardBody>
               );
             })}
-          </Slider>
+          </S.NewPortFolioCardContentBody>
         </S.NewPortFolioCardContentLayout>
         <S.NewPortFolioCardAll>
           <p> {title} </p>
