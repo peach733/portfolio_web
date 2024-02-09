@@ -50,6 +50,7 @@ export const PortFolioMyPortPolioCard = styled.div`
   background-size: 100%;
   border-radius: 10px;
   padding: 20px;
+  cursor: pointer;
 
   &:hover {
     .background-hover {
