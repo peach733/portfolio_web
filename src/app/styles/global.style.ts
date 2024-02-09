@@ -1,36 +1,56 @@
 import { createGlobalStyle } from "styled-components";
-import { reset } from "styled-reset";
+import { normalize } from "styled-normalize";
 
 export const GlobalStyle = createGlobalStyle`
-  ${reset}
+  ${normalize}
   
-  :root {
-    display: block;
+  html,
+  body {
     width: 100vw;
     height: 100vh;
-    line-height: 1;
-    overflow: hidden;
-    overflow-y: auto;
-  }
-
-  * {
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
+    font-size: 10px;
+    font-family: var(--font-noto);
+    letter-spacing: -.5px;
+
     ::-webkit-scrollbar {
       display: none;
     }
   }
 
-  html {
-    font-size: 10px;
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
-  body {
-    width: 100%;
-    height: 100%;
-    font-family: var(--font-noto);
+  p {
+    padding: 0;
+    margin: 0;
   }
 
+  ul, li {
+    padding: 0;
+    margin: 0; 
+    list-style: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .err-message {
+    color: red;
+    font-size: 1.1rem;
+  }
+
+  .holiday {
+    color: #d10000;
+  }
+
+  abbr{
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: start;
+}
 `;

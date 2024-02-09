@@ -5,7 +5,7 @@ export const MainPageLayout = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 125px;
+  gap: 90px;
   padding: 0 20px 0 20px;
   margin-top: 50px;
 `;

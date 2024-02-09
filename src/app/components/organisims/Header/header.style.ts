@@ -1,13 +1,39 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const HeaderLayout = styled.div`
+export const HeaderLayout = styled.header`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 20px;
-  margin-top: 22px;
+  padding: 20px 20px 0 20px;
+
+  ${(props) =>
+    props.className === "Front-End"
+      ? css`
+          .Front-End {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: ${(props) => props.theme.colors.point};
+          }
+        `
+      : props.className === "Back-End"
+      ? css`
+          .Back-End {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: ${(props) => props.theme.colors.point};
+          }
+        `
+      : props.className === "Web-Publisher"
+      ? css`
+          .Web-Publisher {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: ${(props) => props.theme.colors.point};
+          }
+        `
+      : ""}
 `;
 
 export const HeaderTitleBox = styled.div`
@@ -30,4 +56,11 @@ export const HeaderMenuText = styled.p`
   font-weight: 600;
   color: ${(props) => props.theme.colors.primary};
   text-align: center;
+
+  &:hover {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: ${(props) => props.theme.colors.point};
+    transition: all ease-in-out 0.8s;
+  }
 `;

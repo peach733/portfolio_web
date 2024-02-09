@@ -4,8 +4,8 @@ import Header from "@organisims/Header/Header";
 export default function Home() {
   return (
     <>
-      <Header />
-      <MainPageTemplate />
+      <Header title="Front-End" />
+      <MainPageTemplate title="Front-End" />
     </>
   );
 }

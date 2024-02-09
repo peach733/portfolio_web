@@ -3,6 +3,7 @@
 import React, { MouseEvent, useRef, useState } from "react";
 import * as S from "./newPortFolioCard.style";
 import { NewPortFolioCardProps } from "@/app/types/NewPortFolioCardTypes";
+import rightArrowIcons from "@styles/icons/arrowIcons.svg";
 
 const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
   const scrollRef: any = useRef<HTMLDivElement>(null);
@@ -73,8 +74,14 @@ const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
           </S.NewPortFolioCardContentBody>
         </S.NewPortFolioCardContentLayout>
         <S.NewPortFolioCardAll>
-          <p> {title} </p>
-          <p> view all </p>
+          <S.NewPortFoliloCardAllBody className="hoverDiv" />
+          <S.NewPortFoliloCardAllLayout>
+            <S.NewPortFolioCardAllTextBox>
+              <S.NewPortFolioCardAllTitle> {title} </S.NewPortFolioCardAllTitle>
+              <S.NewPortFoliloCardAllText>view all</S.NewPortFoliloCardAllText>
+            </S.NewPortFolioCardAllTextBox>
+            <img src={`${rightArrowIcons.src}`} width={40} />
+          </S.NewPortFoliloCardAllLayout>
         </S.NewPortFolioCardAll>
       </S.NewPortFolioCardBody>
     </S.NewPortFolioCardLayout>
