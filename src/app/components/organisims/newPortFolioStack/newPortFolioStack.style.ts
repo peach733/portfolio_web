@@ -34,6 +34,8 @@ export const NewPortFolioStackCardLayout = styled.div`
 
 export const NewPortFolioStackCard = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   min-height: 450px;
   display: flex;
@@ -42,20 +44,30 @@ export const NewPortFolioStackCard = styled.div`
   align-items: center;
   background: ${(props) => props.theme.colors.gray};
   border-radius: 10px;
-  box-shadow: ${(props) => props.theme.shadow.default};
+  box-shadow: ${(props) => props.theme.shadow.stack};
 
   &.stackCard-0 {
     top: 0;
     left: 0;
+    z-index: 2;
+    background: ${(props) => props.theme.colors.gray};
   }
 
   &.stackCard-1 {
     top: 25px;
     left: 0;
+    z-index: 1;
+    background: ${(props) => props.theme.colors.gray};
   }
 
   &.stackCard-2 {
     top: 50px;
     left: 0;
+    z-index: -1;
+    background: ${(props) => props.theme.colors.gray};
+  }
+
+  &.all-view {
+    z-index: -2;
   }
 `;

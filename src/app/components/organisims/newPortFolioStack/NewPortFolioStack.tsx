@@ -20,9 +20,13 @@ const NewPortFolioStack = ({ title }: NewPortFolioStackProps) => {
             return (
               <S.NewPortFolioStackCard key={idx} className={`stackCard-${idx}`}>
                 {data.content}
+                {idx}
               </S.NewPortFolioStackCard>
             );
           })}
+          <S.NewPortFolioStackCard className="all-view">
+            전체보기
+          </S.NewPortFolioStackCard>
         </S.NewPortFolioStackCardLayout>
       </S.NewPortFolioStackBody>
     </S.NewPortFolioStackLayout>
