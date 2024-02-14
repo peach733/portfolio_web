@@ -56,6 +56,7 @@ export const HeaderMenuText = styled.p`
   font-weight: 600;
   color: ${(props) => props.theme.colors.primary};
   text-align: center;
+  cursor: pointer;
 
   &:hover {
     font-size: 2.4rem;

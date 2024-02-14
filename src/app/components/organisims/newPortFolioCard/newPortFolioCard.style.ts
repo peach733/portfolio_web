@@ -35,6 +35,10 @@ export const NewPortFolioCardContentLayout = styled.div`
   flex-direction: row;
   overflow-x: scroll;
   cursor: grab;
+
+  &.clickMouse {
+    cursor: grabbing;
+  }
 `;
 
 export const NewPortFolioCardContentBody = styled.div`

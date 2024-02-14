@@ -35,9 +35,11 @@ const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
 
   const handleMouseDownEvent = (e: MouseEvent<HTMLDivElement>) => {
     setDragging(true);
+
     if (scrollRef.current) {
       setClickPoint(e.pageX);
       setScrollLeft(scrollRef.current?.scrollLeft);
+      scrollRef.current?.classList.add("clickMouse");
     }
   };
 
@@ -61,7 +63,10 @@ const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
           <S.NewPortFolioCardContentBody
             onMouseDown={handleMouseDownEvent}
             onMouseLeave={() => setDragging(false)}
-            onMouseUp={() => setDragging(false)}
+            onMouseUp={() => {
+              setDragging(false);
+              return scrollRef.current?.classList.remove("clickMouse");
+            }}
             onMouseMove={handleMouseMoveEvent}
           >
             {test.map((data: any, idx: number) => {
