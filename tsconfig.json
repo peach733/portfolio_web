@@ -23,7 +23,8 @@
       "@styles/images/*": ["./src/app/styles/assets/images/*"],
       "@styles/icons/*": ["./src/app/styles/assets/icons/*"],
       "@templates/*": ["./src/app/components/templates/*"],
-      "@organisims/*": ["./src/app/components/organisims/*"]
+      "@organisims/*": ["./src/app/components/organisims/*"],
+      "@molcules/*": ["./src/app/components/molcules/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

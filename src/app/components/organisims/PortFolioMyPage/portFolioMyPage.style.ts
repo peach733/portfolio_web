@@ -94,7 +94,7 @@ export const PortFolioMyPortPolioCardTextBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  z-index: 2;
+  z-index: 3;
 `;
 
 export const IconDiv = styled.div`
@@ -103,7 +103,7 @@ export const IconDiv = styled.div`
   background-image: url(${arrowIcons.src});
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: 2;
+  z-index: 3;
 `;
 
 export const PortFolioMyTitle = styled.p`

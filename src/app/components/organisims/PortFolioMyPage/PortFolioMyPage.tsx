@@ -2,6 +2,7 @@
 
 import React from "react";
 import * as S from "./portFolioMyPage.style";
+import ImageChangedCard from "@molcules/ImageChangeCard/ImageChangedCard";
 
 const NewPortFolioMyPage = () => {
   return (
@@ -17,7 +18,7 @@ const NewPortFolioMyPage = () => {
             </S.PortFolioMyPortPolioCardTextBox>
             <S.IconDiv className="hover-white" />
           </S.PortFolioMyPortPolioCard>
-          <S.PortFolioMyPageCard />
+          <ImageChangedCard />
         </S.MyPageCardContentBody>
       </S.PortFolioMyPageBody>
     </S.PortFolioMyPageLayout>
