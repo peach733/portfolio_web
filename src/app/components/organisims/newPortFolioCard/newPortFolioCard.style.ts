@@ -71,6 +71,7 @@ export const NewPortFolioCardAll = styled.div`
   align-items: start;
   box-shadow: ${(props) => props.theme.shadow.default};
   background-image: url(${CardBg.src});
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import myPortFolioBG from "@styles/images/myPortFolioCardBackground.jpg";
 import arrowIcons from "@styles/icons/arrowIcons.svg";
 import arrowWhiteIcons from "@styles/icons/arrowIcons-white.svg";
 
@@ -44,10 +43,6 @@ export const PortFolioMyPortPolioCard = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-image: url(${myPortFolioBG.src});
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: 100%;
   border-radius: 10px;
   padding: 20px;
   cursor: pointer;
@@ -86,6 +81,7 @@ export const CardBackgroundBlack = styled.div`
   border-radius: 10px;
   opacity: 0.4;
   z-index: 1;
+  transition: all ease-in-out 0.8s;
 `;
 
 export const PortFolioMyPortPolioCardTextBox = styled.div`
@@ -95,6 +91,7 @@ export const PortFolioMyPortPolioCardTextBox = styled.div`
   flex-direction: column;
   justify-content: start;
   z-index: 3;
+  transition: all ease-in-out 0.8s;
 `;
 
 export const IconDiv = styled.div`

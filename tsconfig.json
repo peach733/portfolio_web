@@ -20,6 +20,7 @@
     "baseUrl": "",
     "paths": {
       "@/*": ["./src/*"],
+      "@hooks/*": ["src/app/hooks/*"],
       "@styles/images/*": ["./src/app/styles/assets/images/*"],
       "@styles/icons/*": ["./src/app/styles/assets/icons/*"],
       "@templates/*": ["./src/app/components/templates/*"],

@@ -1,13 +1,6 @@
 import styled from "styled-components";
 import arrowWhiteIcons from "@styles/icons/arrowIcons-white.svg";
-import personImage1 from "@styles/images/person1.jpg";
-import personImage2 from "@styles/images/person2.jpg";
-import personImage3 from "@styles/images/person3.jpg";
-import personImage4 from "@styles/images/person4.jpg";
-import personImage5 from "@styles/images/person5.jpg";
-import personImage6 from "@styles/images/person6.jpg";
-import personImage7 from "@styles/images/person7.jpg";
-import personImage8 from "@styles/images/person8.jpg";
+import myInfoCardBG from "@styles/images/myInfoBackground.gif";
 
 export const ImageChangeCardLayout = styled.div`
   width: 100%;
@@ -28,28 +21,12 @@ export const ImageChangeCardBody = styled.div`
   border-radius: 10px;
   padding: 12px;
 
-  background-image: ${(props) =>
-    props.className === "personImage1"
-      ? `url(${personImage1.src})`
-      : props.className === "personImage2"
-      ? `url(${personImage2.src})`
-      : props.className === "personImage3"
-      ? `url(${personImage3.src})`
-      : props.className === "personImage4"
-      ? `url(${personImage4.src})`
-      : props.className === "personImage5"
-      ? `url(${personImage5.src})`
-      : props.className === "personImage6"
-      ? `url(${personImage6.src})`
-      : props.className === "personImage7"
-      ? `url(${personImage7.src})`
-      : props.className === "personImage8"
-      ? `url(${personImage8.src})`
-      : ""};
+  background-image: url(${myInfoCardBG.src});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: background-image 0.15s ease;
+  transition: background-image 0.15ms ease;
+  cursor: pointer;
 `;
 
 export const CardTitleBox = styled.div`

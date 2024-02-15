@@ -4,7 +4,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import { GlobalStyle } from "./styles/global.style";
-import StyledComponentsRegistry from "./lib/registry";
+import StyledComponentsRegistry from "@hooks/styled/registry";
 
 const noto = Noto_Sans_KR({
   weight: "500",
