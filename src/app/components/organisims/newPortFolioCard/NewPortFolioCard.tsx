@@ -4,6 +4,10 @@ import React, { MouseEvent, useRef, useState } from "react";
 import * as S from "./newPortFolioCard.style";
 import { NewPortFolioCardProps } from "@/app/types/NewPortFolioCardTypes";
 import rightArrowIcons from "@styles/icons/arrowIcons.svg";
+import reactIcons from "@styles/icons/reactIcon.svg";
+import typeScriptIcons from "@styles/icons/TypescriptIcon.svg";
+import VsCodeIcons from "@styles/icons/VSCodeIcon.svg";
+import Image from "next/image";
 
 const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
   const scrollRef: any = useRef<HTMLDivElement>(null);
@@ -13,24 +17,39 @@ const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   const test = [
-    { id: 0, content: "야호" },
-    { id: 0, content: "아니" },
-    { id: 0, content: "진짜" },
-    { id: 0, content: "왜" },
-    { id: 0, content: "안 돼?" },
-    { id: 0, content: "개빡치네" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
-    { id: 0, content: "야호" },
+    {
+      id: 0,
+      userName: "test1",
+      useLang: [
+        { id: 0, name: reactIcons },
+        { id: 0, name: typeScriptIcons },
+        { id: 0, name: VsCodeIcons },
+      ],
+    },
+    {
+      id: 0,
+      userName: "test2",
+      useLang: [
+        { id: 0, name: reactIcons },
+        { id: 0, name: typeScriptIcons },
+      ],
+    },
+    {
+      id: 0,
+      userName: "test3",
+      useLang: [
+        { id: 0, name: reactIcons },
+        { id: 0, name: typeScriptIcons },
+      ],
+    },
+    {
+      id: 0,
+      userName: "test5",
+      useLang: [
+        { id: 0, name: reactIcons },
+        { id: 0, name: typeScriptIcons },
+      ],
+    },
   ];
 
   const handleMouseDownEvent = (e: MouseEvent<HTMLDivElement>) => {
@@ -72,7 +91,20 @@ const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
             {test.map((data: any, idx: number) => {
               return (
                 <S.NewPortFolioCardContent key={idx}>
-                  {data.content}
+                  <S.CardProfileImage />
+                  <S.CardProfileLanguageBox>
+                    {data.useLang.map((lang: any, id: number) => {
+                      return (
+                        <Image
+                          src={lang.name}
+                          width={25}
+                          height={25}
+                          alt={id.toString()}
+                        />
+                      );
+                    })}
+                  </S.CardProfileLanguageBox>
+                  <S.CardProfileUserName>{data.userName}</S.CardProfileUserName>
                 </S.NewPortFolioCardContent>
               );
             })}

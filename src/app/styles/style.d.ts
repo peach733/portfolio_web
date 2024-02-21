@@ -14,5 +14,8 @@ declare module "styled-components" {
       gray: string;
       point: string;
     };
+    background: {
+      primary: string;
+    };
   }
 }

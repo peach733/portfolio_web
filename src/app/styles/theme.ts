@@ -13,4 +13,7 @@ export const theme: DefaultTheme = {
     gray: "#CECECE",
     point: "#3A478A",
   },
+  background: {
+    primary: "#FAFBFF",
+  },
 };

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CardBg from "@styles/images/cardBackground.jpg";
+import testImage from "@styles/images/person1.jpg";
 
 export const NewPortFolioCardLayout = styled.div`
   width: 100%;
@@ -8,6 +9,7 @@ export const NewPortFolioCardLayout = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  padding: 20px;
   gap: 12px;
 `;
 
@@ -47,18 +49,45 @@ export const NewPortFolioCardContentBody = styled.div`
   flex-direction: row;
   gap: 20px;
   margin-bottom: 1px;
+  padding: 12px;
 `;
 
 export const NewPortFolioCardContent = styled.div`
   width: 400px;
-  min-height: 350px;
+  min-height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: left;
   border-radius: 10px;
-  background: ${(props) => props.theme.colors.gray};
+  background: ${(props) => props.theme.colors.white};
   box-shadow: ${(props) => props.theme.shadow.default};
+  padding: 12px;
+  gap: 12px;
+`;
+
+export const CardProfileImage = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url(${testImage.src});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+`;
+
+export const CardProfileLanguageBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+`;
+
+export const CardProfileUserName = styled.p`
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: left;
 `;
 
 export const NewPortFolioCardAll = styled.div`

@@ -9,7 +9,7 @@ export const PortFolioMyPageLayout = styled.div`
   flex-direction: column;
   justify-content: start;
   gap: 12px;
-  padding-bottom: 20px;
+  padding: 0px 20px 20px 20px;
 `;
 
 export const PortFolioMyPageTitle = styled.p`
