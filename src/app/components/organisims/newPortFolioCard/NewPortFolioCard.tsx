@@ -96,6 +96,7 @@ const NewPortFolioCard = ({ title }: NewPortFolioCardProps) => {
                     {data.useLang.map((lang: any, id: number) => {
                       return (
                         <Image
+                          key={id}
                           src={lang.name}
                           width={25}
                           height={25}
