@@ -26,7 +26,7 @@ const NewPortFolioStack = ({ title }: NewPortFolioStackProps) => {
         <S.NewPortFolioStackCardLayout>
           {test.map((data, idx) => {
             return (
-              <S.NewPortFolioStackCard key={idx} className={`stackCard-${idx}`}>
+              <S.NewPortFolioStackCard key={idx}>
                 {data.content}
                 {idx}
               </S.NewPortFolioStackCard>

@@ -31,6 +31,7 @@ export const NewPortFolioStackAllViewBox = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const allViewText = styled.p`
@@ -67,4 +68,6 @@ export const NewPortFolioStackCard = styled.div`
   background: ${(props) => props.theme.colors.gray};
   border-radius: 10px;
   box-shadow: ${(props) => props.theme.shadow.stack};
+
+  cursor: pointer;
 `;
