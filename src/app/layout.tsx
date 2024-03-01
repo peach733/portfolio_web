@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import { GlobalStyle } from "./styles/global.style";
 import StyledComponentsRegistry from "@hooks/styled/registry";
+import AuthSession from "./components/provider/session-provider";
 
 const noto = Noto_Sans_KR({
   weight: "500",
@@ -26,7 +27,9 @@ export default function RootLayout({
             <title> PORTFOLIO.OUR </title>
             <GlobalStyle />
           </head>
-          <body>{children}</body>
+          <body>
+            <AuthSession>{children}</AuthSession>
+          </body>
         </html>
       </ThemeProvider>
     </StyledComponentsRegistry>

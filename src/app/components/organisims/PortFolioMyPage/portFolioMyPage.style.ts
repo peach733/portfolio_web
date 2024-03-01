@@ -3,6 +3,7 @@ import arrowIcons from "@styles/icons/arrowIcons.svg";
 import arrowWhiteIcons from "@styles/icons/arrowIcons-white.svg";
 
 export const PortFolioMyPageLayout = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -16,6 +17,27 @@ export const PortFolioMyPageTitle = styled.p`
   font-size: 2rem;
   font-weight: 600;
   color: ${(props) => props.theme.colors.black};
+`;
+
+export const AuthIsFalse = styled.div`
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: ${(props) => props.theme.background.auth};
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: not-allowed;
+`;
+
+export const AuthIsFalseText = styled.p`
+  font-size: 2rem;
+  font-weight: 500;
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const PortFolioMyPageBody = styled.div`

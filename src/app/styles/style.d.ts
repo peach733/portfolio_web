@@ -13,9 +13,19 @@ declare module "styled-components" {
       white: string;
       gray: string;
       point: string;
+      kakao: string;
     };
     background: {
       primary: string;
+      gray: string;
+      kakao: string;
+      github: string;
+      naver: string;
+      white: string;
+      auth: string;
+    };
+    border: {
+      google: string;
     };
   }
 }

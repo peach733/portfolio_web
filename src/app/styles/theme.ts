@@ -12,8 +12,18 @@ export const theme: DefaultTheme = {
     white: "#FFFFFF",
     gray: "#CECECE",
     point: "#3A478A",
+    kakao: "rgba(0, 0, 0, 0.8)",
   },
   background: {
     primary: "#FAFBFF",
+    gray: "#D9D9D9",
+    kakao: "#FEE500",
+    github: "#161614",
+    naver: "#03C75A",
+    white: "#FFFFFF",
+    auth: "rgba(0, 0, 0, 0.8)",
+  },
+  border: {
+    google: "#747775",
   },
 };

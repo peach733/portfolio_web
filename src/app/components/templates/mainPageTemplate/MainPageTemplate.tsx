@@ -7,12 +7,12 @@ import NewPortFolioStack from "@organisims/newPortFolioStack/NewPortFolioStack";
 import NewPortFolioMyPage from "../../organisims/PortFolioMyPage/PortFolioMyPage";
 import { MainPageProps } from "@/app/types/MainPageTypes";
 
-const MainPageTemplate = ({ title }: MainPageProps) => {
+const MainPageTemplate = ({ title, session }: MainPageProps) => {
   return (
     <S.MainPageLayout>
       <NewPortFolioCard title={title} />
       <NewPortFolioStack title={title} />
-      <NewPortFolioMyPage />
+      <NewPortFolioMyPage session={session} />
     </S.MainPageLayout>
   );
 };

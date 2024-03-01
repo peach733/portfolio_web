@@ -1,6 +1,13 @@
 import styled, { css } from "styled-components";
 
-export const HeaderLayout = styled.header`
+export const HeaderLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const HeaderBody = styled.header`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -33,6 +40,14 @@ export const HeaderLayout = styled.header`
             color: ${(props) => props.theme.colors.point};
           }
         `
+      : props.className === "Login"
+      ? css`
+          .Login {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: ${(props) => props.theme.colors.point};
+          }
+        `
       : ""}
 `;
 
@@ -42,6 +57,7 @@ export const HeaderTitleBox = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  cursor: pointer;
 `;
 
 export const HeaderTitle = styled.p`

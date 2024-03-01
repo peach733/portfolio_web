@@ -1,23 +1,47 @@
-"use client";
-
 import React from "react";
 import * as S from "./header.style";
 import { HeaderProps } from "@/app/types/HeaderTypes";
+import Link from "next/link";
+import { signOut } from "next-auth/react";
 
-const Header = ({ title }: HeaderProps) => {
+const Header = ({ title, pageMoveHandler, session }: HeaderProps) => {
   return (
-    <S.HeaderLayout className={title}>
-      <S.HeaderTitleBox>
-        <S.HeaderTitle> It's OUR </S.HeaderTitle>
-        <S.HeaderTitle> PORTFOLIO. </S.HeaderTitle>
+    <S.HeaderBody className={title}>
+      <S.HeaderTitleBox onClick={() => pageMoveHandler("Front-End")}>
+        <Link href="/">
+          <S.HeaderTitle> It's OUR </S.HeaderTitle>
+          <S.HeaderTitle> PORTFOLIO. </S.HeaderTitle>
+        </Link>
       </S.HeaderTitleBox>
-      <S.HeaderMenuText className="Front-End"> Front-End </S.HeaderMenuText>
-      <S.HeaderMenuText className="Back-End"> Back-End </S.HeaderMenuText>
-      <S.HeaderMenuText className="Web-Publisher">
-        Web-Publisher
+      <S.HeaderMenuText
+        className="Front-End"
+        onClick={() => pageMoveHandler("Front-End")}
+      >
+        <Link href="/">Front-End</Link>
       </S.HeaderMenuText>
-      <S.HeaderMenuText> Login </S.HeaderMenuText>
-    </S.HeaderLayout>
+      <S.HeaderMenuText
+        className="Back-End"
+        onClick={() => pageMoveHandler("Back-End")}
+      >
+        <Link href="/">Back-End</Link>
+      </S.HeaderMenuText>
+      <S.HeaderMenuText
+        className="Web-Publisher"
+        onClick={() => pageMoveHandler("Web-Publisher")}
+      >
+        <Link href="/">Web-Publisher</Link>
+      </S.HeaderMenuText>
+      {session && (
+        <S.HeaderMenuText className="Logout" onClick={() => signOut()}>
+          <Link href="/">Logout</Link>
+        </S.HeaderMenuText>
+      )}
+      {!session && (
+        <S.HeaderMenuText className="Login">
+          <Link href="/login">Login</Link>
+        </S.HeaderMenuText>
+      )}
+    </S.HeaderBody>
   );
 };
 

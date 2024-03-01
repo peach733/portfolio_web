@@ -5,11 +5,17 @@ import * as S from "./portFolioMyPage.style";
 import ImageChangedCard from "@molcules/ImageChangeCard/ImageChangedCard";
 import Image from "next/image";
 import myPortFolioBG from "@styles/images/myPortFolioCardBackground.jpg";
+import { MyPageProps } from "@/app/types/MyPageTypes";
 
-const NewPortFolioMyPage = () => {
+const NewPortFolioMyPage = ({ session }: MyPageProps) => {
   return (
     <S.PortFolioMyPageLayout>
       <S.PortFolioMyPageTitle> MY CONTENT </S.PortFolioMyPageTitle>
+      {!session && (
+        <S.AuthIsFalse>
+          <S.AuthIsFalseText> 로그인 후 접근 가능합니다. </S.AuthIsFalseText>
+        </S.AuthIsFalse>
+      )}
       <S.PortFolioMyPageBody>
         <S.MyPageCardContentBody>
           <S.PortFolioMyPortPolioCard>
